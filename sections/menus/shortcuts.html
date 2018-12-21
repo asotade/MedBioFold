@@ -1,0 +1,54 @@
+<template class="task-template">
+  <section id="shortcuts-section" class="section js-section u-category-menu">
+    <header class="section-header">
+      <div class="section-wrapper">
+        <h1>
+          <svg class="section-icon"><use xlink:href="assets/img/icons.svg#icon-menu"></use></svg>
+          Importer le fichier PDB
+        </h1>
+
+        <h3>Veuillez importer le fichier que vous voulez travailler avec.</h3>
+
+        <p>
+          MedBioFold vous donnent la possibilité d'importer un fichier PDB.
+          ou bien just donner le nom de protéine ou l'ID
+        </p>
+
+        <p>
+          Merci de choisir l'option qui vous convient.
+        </p>
+
+      </div>
+    </header>
+
+    <div class="demo">
+      <div class="demo-wrapper">
+        <button id="selectFile-demo-toggle" class="js-container-target demo-toggle-button">Importer le fichier PDB
+          <div class="demo-meta u-avoid-clicks">Choisir un fichier depuis votre machine </div>
+        </button>
+        <div class="demo-box">
+          <p>
+            Veuillez selectioner un fichier PDB depuis votre machine
+          </p>
+          <button class="demo-button" id="select-directory">Choisir un fichier</button>
+          <span class="demo-response" style="color : #c0392b" id="ErrorM"></span>
+          <span class="demo-response" id="successM"></span>
+        </div>
+      </div>
+      <div class="demo-wrapper">
+        <button id="enterId-demo-toggle" class="js-container-target demo-toggle-button">Donner le nom de protéine
+          <div class="demo-meta u-avoid-clicks">Si vous n'avez pas le fichier dans votre système mais ça necessite une connection internet</div>
+        </button>
+        <div class="demo-box">
+          <p>
+            TEST PYTHON
+          </p>
+          <input class="demo-input" type="text" id="namu" placeholder="this is a test ">
+          <button class="demo-button" id="testPython">python test</button>
+
+        </div>
+      </div>
+    </div>
+
+  </section>
+</template>
