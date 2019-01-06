@@ -1,6 +1,6 @@
 const {BrowserWindow} = require('electron').remote
 const path = require('path')
-
+/*
 const newWindowBtn = document.getElementById('new-window')
 
 newWindowBtn.addEventListener('click', (event) => {
@@ -11,3 +11,4 @@ newWindowBtn.addEventListener('click', (event) => {
   win.loadURL(modalPath)
   win.show()
 })
+*/

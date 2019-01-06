@@ -1,5 +1,6 @@
 const {BrowserWindow} = require('electron').remote
 const path = require('path')
+/*
 
 const manageWindowBtn = document.getElementById('manage-window')
 let win
@@ -20,3 +21,4 @@ manageWindowBtn.addEventListener('click', (event) => {
     manageWindowReply.innerText = message
   }
 })
+*/

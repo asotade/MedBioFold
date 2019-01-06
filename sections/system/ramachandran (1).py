@@ -15,10 +15,6 @@ import sys
 
 pdb = sys.argv[1]
 
-dir = os.path.dirname(os.path.realpath(__file__))
-
-
-
 def ramachandran(pdb):
     """
     Main calculation and plotting definition
@@ -28,22 +24,22 @@ def ramachandran(pdb):
     # General variable for the background preferences
     rama_preferences = {
         "General": {
-            "file": dir+"/pref_general.data",
+            "file": "pref_general.data",
             "cmap": colors.ListedColormap(['#FFFFFF', '#B3E8FF', '#7FD9FF']),
             "bounds": [0, 0.0005, 0.02, 1],
         },
         "GLY": {
-            "file": dir+"/pref_glycine.data",
+            "file": "pref_glycine.data",
             "cmap": colors.ListedColormap(['#FFFFFF', '#FFE8C5', '#FFCC7F']),
             "bounds": [0, 0.002, 0.02, 1],
         },
         "PRO": {
-            "file": dir+"/pref_proline.data",
+            "file": "pref_proline.data",
             "cmap": colors.ListedColormap(['#FFFFFF', '#D0FFC5', '#7FFF8C']),
             "bounds": [0, 0.002, 0.02, 1],
         },
         "PRE-PRO": {
-            "file": dir+"/pref_preproline.data",
+            "file": "pref_preproline.data",
             "cmap": colors.ListedColormap(['#FFFFFF', '#B3E8FF', '#7FD9FF']),
             "bounds": [0, 0.002, 0.02, 1],
         }
@@ -100,7 +96,7 @@ def ramachandran(pdb):
                             aa_type = "General"
                         if rama_pref_values[aa_type][int(math.degrees(psi)) + 180][int(math.degrees(phi)) + 180] < \
                         rama_preferences[aa_type]["bounds"][1]:
-                            #print("{} {} {} {}{} is an outlier".format(pdb, model, chain, res_name, res_num))
+                            print("{} {} {} {}{} is an outlier".format(pdb, model, chain, res_name, res_num))
                             cmp_outliers=cmp_outliers+1
                             outliers[aa_type]["x"].append(math.degrees(phi))
                             outliers[aa_type]["y"].append(math.degrees(psi))
@@ -127,14 +123,19 @@ def ramachandran(pdb):
         plt.ylabel(r'$\psi$')
         plt.grid()
 
-
-    total=0
-    for i in cmp_total:
-        total=total+i
-    res = str(total) +";"+str(cmp_normals)+";"+str(cmp_outliers)
-    print(res)
-    sys.stdout.flush()
     plt.tight_layout()
     # plt.savefig("asd.png", dpi=300)
     plt.show()
+    total=0
+    for i in cmp_total:
+        total=total+i
+    print("Parmi  les {} residus , {} sont en bonne position  et {} sont des outliers ".format(total,cmp_normals,cmp_outliers ))
+    pourcentage_bien=cmp_normals/total
+    pourcentage_bien=pourcentage_bien*100
+    pourcentage_mal=cmp_outliers/total
+    pourcentage_mal=pourcentage_mal*100
+    print("ha total=>"+str(total))
+    print("Donc un total de {}% residus normals et {}% de residus outliers".format(pourcentage_bien,pourcentage_mal))
+    sys.stdout.flush()
+
 ramachandran(pdb)

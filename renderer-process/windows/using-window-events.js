@@ -1,6 +1,6 @@
 const {BrowserWindow} = require('electron').remote
 const path = require('path')
-
+/*
 const manageWindowBtn = document.getElementById('listen-to-window')
 const focusModalBtn = document.getElementById('focus-on-modal-window')
 let win
@@ -33,3 +33,4 @@ manageWindowBtn.addEventListener('click', () => {
 
   const clickHandler = () => { win.focus() }
 })
+*/

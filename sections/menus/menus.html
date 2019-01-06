@@ -4,23 +4,19 @@
       <div class="section-wrapper">
         <h1>
           <svg class="section-icon"><use xlink:href="assets/img/icons.svg#icon-menu"></use></svg>
-          Customize Menus
+          Information generale sur la proteine
         </h1>
-        <h3>The <code>Menu</code> and <code>MenuItem</code> modules can be used to create custom native menus.</h3>
-
-        <p>There are two kinds of menus: the application (top) menu and context (right-click) menu.</p>
-
-        <p>Open the <a href="http://electron.atom.io/docs/api/menu">full API documentation<span class="u-visible-to-screen-reader">(opens in new window)</span></a> in your browser.</p>
+        <p>Cette page vous permet d’extraire les informations concernant les modèles, chaines et les résidus à partir du fichier pdb . </p>
+        <p>Vous pouvez choisir l'action a excecuter.  </p>
       </div>
     </header>
 
     <div class="demo">
       <div class="demo-wrapper">
-        <button id="application-menu-demo-toggle" class="js-container-target demo-toggle-button">Séquence ...
-          <div class="demo-meta u-avoid-clicks">some desc xD <span class="demo-meta-divider">|</span> Process: Main</div>
+        <button id="application-menu-demo-toggle" class="js-container-target demo-toggle-button"> Séquence "FASTA"
+          <div class="demo-meta u-avoid-clicks">Dans cette partie vous pouvez visualisez la séquence FASTA de votre proteine.</div>
         </button>
         <div class="demo-box" id="seqRes">
-          <p>Longer DESC ......</p>
           <button class="demo-button" id="showSeq">Voir la séquence</button>
           <span class="demo-response" style="color : #c0392b" id="errorSeqM"></span>
         </div>
@@ -29,10 +25,10 @@
 
     <div class="demo">
       <div class="demo-wrapper">
-        <button id="context-menu-demo-toggle" class="js-container-target demo-toggle-button">Create a context menu
-          <div class="demo-meta u-avoid-clicks">Supports: Win, macOS, Linux <span class="demo-meta-divider">|</span> Process: Main</div>
+        <button id="context-menu-demo-toggle" class="js-container-target demo-toggle-button"> Modeles de la proteine
+          <div class="demo-meta u-avoid-clicks">Dans cette partie vous pouvez visualisez les differents modeles que comporte la proteine.</div>
         </button>
-        <div class="demo-box">
+        <!--<div class="demo-box">
           <div class="demo-controls">
             <button class="demo-button" id="context-menu">View Demo</button>
           </div>
@@ -44,9 +40,43 @@
           <pre><code data-path="main-process/menus/context-menu.js"></code></pre>
           <h5>Renderer Process</h5>
           <pre><code data-path="renderer-process/menus/context-menu.js"></code></pre>
+        </div>-->
+      </div>
+    </div>
+      <div class="demo">
+      <div class="demo-wrapper">
+        <button id="application-menu-demo-toggle" class="js-container-target demo-toggle-button">Chaines de la proteine
+          <div class="demo-meta u-avoid-clicks">Dans cette partie vous pouvez visualisez les differents chaines que comporte la proteine.</div>
+        </button>
+        <div class="demo-box" id="seqRes">
+          <button class="demo-button" id="showSeq">Voir les chaines</button>
+          <span class="demo-response" style="color : #c0392b" id="errorSeqM"></span>
         </div>
       </div>
     </div>
+      <div class="demo">
+      <div class="demo-wrapper">
+        <button id="application-menu-demo-toggle" class="js-container-target demo-toggle-button">Residus de la proteine
+          <div class="demo-meta u-avoid-clicks">Dans cette partie vous pouvez visualisez les differents residus que comporte la proteine.</div>
+        </button>
+        <div class="demo-box" id="seqRes">
+          <button class="demo-button" id="showSeq">Voir les residus</button>
+          <span class="demo-response" style="color : #c0392b" id="errorSeqM"></span>
+        </div>
+      </div>
+    </div>
+      <div class="demo">
+      <div class="demo-wrapper">
+        <button id="application-menu-demo-toggle" class="js-container-target demo-toggle-button">Atomes de la proteine
+          <div class="demo-meta u-avoid-clicks">Dans cette partie vous pouvez visualisez les differents atomes que comporte la proteine.</div>
+        </button>
+        <div class="demo-box" id="seqRes">
+          <button class="demo-button" id="showSeq">Voir les atomes</button>
+          <span class="demo-response" style="color : #c0392b" id="errorSeqM"></span>
+        </div>
+      </div>
+    </div>
+
 
     <script type="text/javascript">
       require('./renderer-process/menus/context-menu')

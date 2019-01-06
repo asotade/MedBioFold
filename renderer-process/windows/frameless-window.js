@@ -1,6 +1,6 @@
 const {BrowserWindow} = require('electron').remote
 const newWindowBtn = document.getElementById('frameless-window')
-
+/*
 const path = require('path')
 
 newWindowBtn.addEventListener('click', (event) => {
@@ -11,3 +11,4 @@ newWindowBtn.addEventListener('click', (event) => {
   win.loadURL(modalPath)
   win.show()
 })
+*/

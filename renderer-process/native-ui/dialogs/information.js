@@ -1,5 +1,5 @@
 const {ipcRenderer} = require('electron')
-
+/*
 const informationBtn = document.getElementById('information-dialog')
 
 informationBtn.addEventListener('click', (event) => {
@@ -12,3 +12,4 @@ ipcRenderer.on('information-dialog-selection', (event, index) => {
   else message += 'no.'
   document.getElementById('info-selection').innerHTML = message
 })
+*/

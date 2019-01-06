@@ -44,16 +44,23 @@ function initialize () {
     }
 
     mainWindow.on('closed', () => {
-      const filepath = "WD/filepath.temp"
+      let filepath = "WD/filepath.temp"
       if (fs.existsSync(filepath)) {
           fs.unlink(filepath, (err) => {
               if (!err) {
                 console.log("File succesfully deleted");
               }
           });
-      }else{
-        console.log("doesnotexiiiiiist :o")
       }
+      filepath = "WD/result.temp"
+      if (fs.existsSync(filepath)) {
+          fs.unlink(filepath, (err) => {
+              if (!err) {
+                console.log("File succesfully deleted");
+              }
+          });
+      }
+
       mainWindow = null
     })
   }
